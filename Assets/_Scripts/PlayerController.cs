@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     public float fireRate = 0.1f; 
     public GameObject bullet;
     public float horizontalBoundary = 2; 
+    public BulletManager bulletManager;
     private Rigidbody2D _rigidbody2D;
     private bool firing = false;
-
     private Vector3 touchesEnd;
     void Start()
     {
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!firing)
         {
-            Instantiate(bullet,transform.position,Quaternion.identity);
+            bulletManager.GetBullet(transform.position);
             firing = true; 
             yield return new WaitForSeconds(fireRate);
             firing = false;

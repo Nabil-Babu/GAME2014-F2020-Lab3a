@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class BulletManager : MonoBehaviour
 {
     public GameObject bullet;
@@ -11,10 +12,10 @@ public class BulletManager : MonoBehaviour
 
     void Start()
     {
-        GenerateBullets();
+        _GenerateBullets();
     }
 
-    void GenerateBullets()
+    private void _GenerateBullets()
     {
         _bulletPool = new Queue<GameObject>();
         for (int count = 0; count < maxBullets; count++)
