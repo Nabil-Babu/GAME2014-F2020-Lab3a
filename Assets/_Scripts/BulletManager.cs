@@ -22,6 +22,7 @@ public class BulletManager : MonoBehaviour
         {
             GameObject tempBullet = Instantiate(bullet);
             tempBullet.SetActive(false);
+            tempBullet.transform.parent = transform;
             _bulletPool.Enqueue(tempBullet);
         }
     }

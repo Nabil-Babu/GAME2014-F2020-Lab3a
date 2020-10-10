@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   maxSpeed: 4
-  fireRate: 1
+  fireRate: 0.2
   bullet: {fileID: 2046450673487472790, guid: 02227166f7ea6fb4787db23e16bc205b, type: 3}
   horizontalBoundary: 2
   bulletManager: {fileID: 0}

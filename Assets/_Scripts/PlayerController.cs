@@ -29,33 +29,33 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-         float direction = 0.0f;
+         // float direction = 0.0f;
 
          foreach(Touch touch in Input.touches)
          {
             Vector3 worldTouch = Camera.main.ScreenToWorldPoint(touch.position);
-            if(worldTouch.x > transform.position.x)
-            {
-                direction = 1.0f;
-            }
+            // if(worldTouch.x > transform.position.x)
+            // {
+            //     direction = 1.0f;
+            // }
 
-            if(worldTouch.x < transform.position.x)
-            {
-                direction = -1.0f;
-            }
+            // if(worldTouch.x < transform.position.x)
+            // {
+            //     direction = -1.0f;
+            // }
 
             touchesEnd = worldTouch;
          }
 
-         if(Input.GetAxis("Horizontal") >= 0.1f)
-         {
-             direction = 1.0f;
-         } 
+        //  if(Input.GetAxis("Horizontal") >= 0.1f)
+        //  {
+        //      direction = 1.0f;
+        //  } 
 
-         if(Input.GetAxis("Horizontal") <= -0.1f)
-         {
-             direction = -1.0f;
-         }
+        //  if(Input.GetAxis("Horizontal") <= -0.1f)
+        //  {
+        //      direction = -1.0f;
+        //  }
 
         //  Vector2 nVelocity = _rigidbody2D.velocity + new Vector2(direction * speed, 0.0f);
         //  _rigidbody2D.velocity = Vector2.ClampMagnitude(nVelocity, maxSpeed);
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
          if (touchesEnd.x != 0)
          {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, touchesEnd.x, 0.01f),transform.position.y,0);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, touchesEnd.x, 0.1f),transform.position.y,0);
          }
     }
 
